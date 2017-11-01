@@ -1,0 +1,3 @@
+/Users/yanggao/Documents/Git Hub/Partical-Drop/CMakeFiles/ParticleDrop.dir
+/Users/yanggao/Documents/Git Hub/Partical-Drop/CMakeFiles/ALL_BUILD.dir
+/Users/yanggao/Documents/Git Hub/Partical-Drop/CMakeFiles/ZERO_CHECK.dir

@@ -1,0 +1,747 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXAggregateTarget section */
+		3EE9ECBF71304AE99BB2FBD9 /* ZERO_CHECK */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 21126088594C4A95BEF3F6DA /* Build configuration list for PBXAggregateTarget "ZERO_CHECK" */;
+			buildPhases = (
+				0146CE29F7FF4D5C86C455AC /* CMake Rules */,
+			);
+			dependencies = (
+			);
+			name = ZERO_CHECK;
+			productName = ZERO_CHECK;
+		};
+		9882C6FDEC2D4BCE8E892685 /* ALL_BUILD */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = DE538AC90D974DE3AB37EC0B /* Build configuration list for PBXAggregateTarget "ALL_BUILD" */;
+			buildPhases = (
+				7CD406D125AE43A79A0A87BB /* CMake Rules */,
+			);
+			dependencies = (
+				0679C09BA48C44868AD9BD2F /* PBXTargetDependency */,
+				52C0A4D5ACA944B29B08489D /* PBXTargetDependency */,
+			);
+			name = ALL_BUILD;
+			productName = ALL_BUILD;
+		};
+/* End PBXAggregateTarget section */
+
+/* Begin PBXBuildFile section */
+		1083A87932844D9699E71CE5 /* /Users/yanggao/Documents/Git Hub/Partical-Drop/resources/reflectance.vert */ = {isa = PBXBuildFile; fileRef = A79F3EB648804653AB0721C6 /* /Users/yanggao/Documents/Git Hub/Partical-Drop/resources/reflectance.vert */; };
+		11792497886244B082BE6139 /* /Users/yanggao/Documents/Git Hub/Partical-Drop/src/WorldState.h */ = {isa = PBXBuildFile; fileRef = 0CE09A422CA44E4AB6D31309 /* /Users/yanggao/Documents/Git Hub/Partical-Drop/src/WorldState.h */; };
+		1BF132062EF2458BAA1C1C5A /* /Users/yanggao/Documents/Git Hub/Partical-Drop/src/glm/detail/glm.cpp */ = {isa = PBXBuildFile; fileRef = 8B7AB3CC8FBC426C8E89A025 /* /Users/yanggao/Documents/Git Hub/Partical-Drop/src/glm/detail/glm.cpp */; };
+		20B973A0B0334903B1D9F633 /* /Users/yanggao/Documents/Git Hub/Partical-Drop/src/Model.h */ = {isa = PBXBuildFile; fileRef = 48B657ECFBE54BAEAE6873FE /* /Users/yanggao/Documents/Git Hub/Partical-Drop/src/Model.h */; };
+		5D3A7508545E444ABC19440D /* /Users/yanggao/Documents/Git Hub/Partical-Drop/src/main.cpp */ = {isa = PBXBuildFile; fileRef = B59BB96A93A54E3DA3EBB9A2 /* /Users/yanggao/Documents/Git Hub/Partical-Drop/src/main.cpp */; };
+		5F331BD761444E1DA372622A /* /Users/yanggao/Documents/Git Hub/Partical-Drop/CMakeLists.txt */ = {isa = PBXBuildFile; fileRef = 1A14FE9FB35943219B17430D /* /Users/yanggao/Documents/Git Hub/Partical-Drop/CMakeLists.txt */; };
+		736689300E9845548A9470B9 /* /Users/yanggao/Documents/Git Hub/Partical-Drop/src/RenderEngine.h */ = {isa = PBXBuildFile; fileRef = 1E1C1F0A16A444099C9D1E31 /* /Users/yanggao/Documents/Git Hub/Partical-Drop/src/RenderEngine.h */; };
+		79F9C40C827E44199C30EB04 /* /Users/yanggao/Documents/Git Hub/Partical-Drop/resources/reflectance.frag */ = {isa = PBXBuildFile; fileRef = 2DD9AA60BD7543F59D65AC73 /* /Users/yanggao/Documents/Git Hub/Partical-Drop/resources/reflectance.frag */; };
+		82D05992A61B4AB7B2233809 /* /Users/yanggao/Documents/Git Hub/Partical-Drop/src/GLLoader.h */ = {isa = PBXBuildFile; fileRef = ED3BB93D9EDB4FB6B8EB2653 /* /Users/yanggao/Documents/Git Hub/Partical-Drop/src/GLLoader.h */; };
+		88AECE421DD749E3AC81E7E0 /* /Users/yanggao/Documents/Git Hub/Partical-Drop/src/gl3w/glcorearb.h */ = {isa = PBXBuildFile; fileRef = 941FF748A1CF485394054994 /* /Users/yanggao/Documents/Git Hub/Partical-Drop/src/gl3w/glcorearb.h */; };
+		955B967C274C4DABB4B6BCBE /* /Users/yanggao/Documents/Git Hub/Partical-Drop/src/GLHelper.h */ = {isa = PBXBuildFile; fileRef = 31F48FF75FC846ADBD90F82E /* /Users/yanggao/Documents/Git Hub/Partical-Drop/src/GLHelper.h */; };
+		960F00D9DC6A46C2B648633E /* /Users/yanggao/Documents/Git Hub/Partical-Drop/src/simplePNG.h */ = {isa = PBXBuildFile; fileRef = 882D081B875C435E86921407 /* /Users/yanggao/Documents/Git Hub/Partical-Drop/src/simplePNG.h */; };
+		B0D70BEDCBD446EB9FEC7593 /* /Users/yanggao/Documents/Git Hub/Partical-Drop/src/glm/detail/dummy.cpp */ = {isa = PBXBuildFile; fileRef = 551A00F1ECC8445B8B32E5FF /* /Users/yanggao/Documents/Git Hub/Partical-Drop/src/glm/detail/dummy.cpp */; };
+		B42B046E2E5743D49DFCE8B6 /* /Users/yanggao/Documents/Git Hub/Partical-Drop/src/objload/obj_parser.h */ = {isa = PBXBuildFile; fileRef = C79F195E4B4346F9A6844249 /* /Users/yanggao/Documents/Git Hub/Partical-Drop/src/objload/obj_parser.h */; };
+		C4ED67D4D7BC44B6804AE144 /* /Users/yanggao/Documents/Git Hub/Partical-Drop/src/ShaderManager.h */ = {isa = PBXBuildFile; fileRef = 64807194E0FE4C10B355502B /* /Users/yanggao/Documents/Git Hub/Partical-Drop/src/ShaderManager.h */; };
+		CF59AF587F96455898FCE35C /* /Users/yanggao/Documents/Git Hub/Partical-Drop/src/gl3w/gl3w.c */ = {isa = PBXBuildFile; fileRef = 0EB9BB8B656642DDA633139A /* /Users/yanggao/Documents/Git Hub/Partical-Drop/src/gl3w/gl3w.c */; };
+		CFA440560D044063BECD9189 /* /Users/yanggao/Documents/Git Hub/Partical-Drop/src/gl3w/gl3w.h */ = {isa = PBXBuildFile; fileRef = 0B6096002C624E0EB38CACFC /* /Users/yanggao/Documents/Git Hub/Partical-Drop/src/gl3w/gl3w.h */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXBuildStyle section */
+		3E6F63189CD34CF29CC9675A /* Release */ = {
+			isa = PBXBuildStyle;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+			};
+			name = Release;
+		};
+		4960528526DB4D7AB7648BAD /* Debug */ = {
+			isa = PBXBuildStyle;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+			};
+			name = Debug;
+		};
+		76DF7F2ACB994B249A34E518 /* MinSizeRel */ = {
+			isa = PBXBuildStyle;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+			};
+			name = MinSizeRel;
+		};
+		A6AD871DE60A4CECB52B403B /* RelWithDebInfo */ = {
+			isa = PBXBuildStyle;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+			};
+			name = RelWithDebInfo;
+		};
+/* End PBXBuildStyle section */
+
+/* Begin PBXContainerItemProxy section */
+		565DE2138E674921925A1F1A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 139E3213FB1B4161AA95FA3B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3EE9ECBF71304AE99BB2FBD9;
+			remoteInfo = ZERO_CHECK;
+		};
+		64EAEFA96C6A42A991B85C9C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 139E3213FB1B4161AA95FA3B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3EE9ECBF71304AE99BB2FBD9;
+			remoteInfo = ZERO_CHECK;
+		};
+		705E2475CDC0483BB17C9A79 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 139E3213FB1B4161AA95FA3B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DC0AA6BE35B84ED3B948C2E1;
+			remoteInfo = ParticleDrop;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		00DC7D4A52AF4919A84B28E8 /* /Users/yanggao/Documents/Git Hub/Partical-Drop/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; name = CMakeLists.txt; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+		0B6096002C624E0EB38CACFC /* /Users/yanggao/Documents/Git Hub/Partical-Drop/src/gl3w/gl3w.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = gl3w.h; path = src/gl3w/gl3w.h; sourceTree = SOURCE_ROOT; };
+		0CE09A422CA44E4AB6D31309 /* /Users/yanggao/Documents/Git Hub/Partical-Drop/src/WorldState.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = WorldState.h; path = src/WorldState.h; sourceTree = SOURCE_ROOT; };
+		0EB9BB8B656642DDA633139A /* /Users/yanggao/Documents/Git Hub/Partical-Drop/src/gl3w/gl3w.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = gl3w.c; path = src/gl3w/gl3w.c; sourceTree = SOURCE_ROOT; };
+		1A14FE9FB35943219B17430D /* /Users/yanggao/Documents/Git Hub/Partical-Drop/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; name = CMakeLists.txt; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+		1E1C1F0A16A444099C9D1E31 /* /Users/yanggao/Documents/Git Hub/Partical-Drop/src/RenderEngine.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = RenderEngine.h; path = src/RenderEngine.h; sourceTree = SOURCE_ROOT; };
+		2DD9AA60BD7543F59D65AC73 /* /Users/yanggao/Documents/Git Hub/Partical-Drop/resources/reflectance.frag */ = {isa = PBXFileReference; explicitFileType = sourcecode; fileEncoding = 4; name = reflectance.frag; path = resources/reflectance.frag; sourceTree = SOURCE_ROOT; };
+		31F48FF75FC846ADBD90F82E /* /Users/yanggao/Documents/Git Hub/Partical-Drop/src/GLHelper.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = GLHelper.h; path = src/GLHelper.h; sourceTree = SOURCE_ROOT; };
+		48B657ECFBE54BAEAE6873FE /* /Users/yanggao/Documents/Git Hub/Partical-Drop/src/Model.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = Model.h; path = src/Model.h; sourceTree = SOURCE_ROOT; };
+		551A00F1ECC8445B8B32E5FF /* /Users/yanggao/Documents/Git Hub/Partical-Drop/src/glm/detail/dummy.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = dummy.cpp; path = src/glm/detail/dummy.cpp; sourceTree = SOURCE_ROOT; };
+		64807194E0FE4C10B355502B /* /Users/yanggao/Documents/Git Hub/Partical-Drop/src/ShaderManager.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = ShaderManager.h; path = src/ShaderManager.h; sourceTree = SOURCE_ROOT; };
+		882D081B875C435E86921407 /* /Users/yanggao/Documents/Git Hub/Partical-Drop/src/simplePNG.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = simplePNG.h; path = src/simplePNG.h; sourceTree = SOURCE_ROOT; };
+		88D3383AC01C4301A69E1B32 /* ParticleDrop */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; path = ParticleDrop; sourceTree = BUILT_PRODUCTS_DIR; };
+		8B7AB3CC8FBC426C8E89A025 /* /Users/yanggao/Documents/Git Hub/Partical-Drop/src/glm/detail/glm.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = glm.cpp; path = src/glm/detail/glm.cpp; sourceTree = SOURCE_ROOT; };
+		941FF748A1CF485394054994 /* /Users/yanggao/Documents/Git Hub/Partical-Drop/src/gl3w/glcorearb.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = glcorearb.h; path = src/gl3w/glcorearb.h; sourceTree = SOURCE_ROOT; };
+		A79F3EB648804653AB0721C6 /* /Users/yanggao/Documents/Git Hub/Partical-Drop/resources/reflectance.vert */ = {isa = PBXFileReference; explicitFileType = sourcecode; fileEncoding = 4; name = reflectance.vert; path = resources/reflectance.vert; sourceTree = SOURCE_ROOT; };
+		A9610D48E7124434A79FED7C /* /Users/yanggao/Documents/Git Hub/Partical-Drop/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; name = CMakeLists.txt; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+		B59BB96A93A54E3DA3EBB9A2 /* /Users/yanggao/Documents/Git Hub/Partical-Drop/src/main.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = main.cpp; path = src/main.cpp; sourceTree = SOURCE_ROOT; };
+		C79F195E4B4346F9A6844249 /* /Users/yanggao/Documents/Git Hub/Partical-Drop/src/objload/obj_parser.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = obj_parser.h; path = src/objload/obj_parser.h; sourceTree = SOURCE_ROOT; };
+		ED3BB93D9EDB4FB6B8EB2653 /* /Users/yanggao/Documents/Git Hub/Partical-Drop/src/GLLoader.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = GLLoader.h; path = src/GLLoader.h; sourceTree = SOURCE_ROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		0D3240936ACE46698514CB6B /* ParticleDrop */ = {
+			isa = PBXGroup;
+			children = (
+				945F86014644417887411DB1 /* Source Files */,
+				F72AD9C6CA204805867579C9 /* Header Files */,
+				1A14FE9FB35943219B17430D /* /Users/yanggao/Documents/Git Hub/Partical-Drop/CMakeLists.txt */,
+				2DD9AA60BD7543F59D65AC73 /* /Users/yanggao/Documents/Git Hub/Partical-Drop/resources/reflectance.frag */,
+				A79F3EB648804653AB0721C6 /* /Users/yanggao/Documents/Git Hub/Partical-Drop/resources/reflectance.vert */,
+			);
+			name = ParticleDrop;
+			sourceTree = "<group>";
+		};
+		13B775969400487B9704F3C8 /* CMake Rules */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "CMake Rules";
+			sourceTree = "<group>";
+		};
+		1630DF4A37A2413C8FAADEDD /* CMake Rules */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "CMake Rules";
+			sourceTree = "<group>";
+		};
+		945F86014644417887411DB1 /* Source Files */ = {
+			isa = PBXGroup;
+			children = (
+				0EB9BB8B656642DDA633139A /* /Users/yanggao/Documents/Git Hub/Partical-Drop/src/gl3w/gl3w.c */,
+				551A00F1ECC8445B8B32E5FF /* /Users/yanggao/Documents/Git Hub/Partical-Drop/src/glm/detail/dummy.cpp */,
+				8B7AB3CC8FBC426C8E89A025 /* /Users/yanggao/Documents/Git Hub/Partical-Drop/src/glm/detail/glm.cpp */,
+				B59BB96A93A54E3DA3EBB9A2 /* /Users/yanggao/Documents/Git Hub/Partical-Drop/src/main.cpp */,
+			);
+			name = "Source Files";
+			sourceTree = "<group>";
+		};
+		AFD25C0ABE77460495B4D3E0 /* ZERO_CHECK */ = {
+			isa = PBXGroup;
+			children = (
+				1630DF4A37A2413C8FAADEDD /* CMake Rules */,
+				00DC7D4A52AF4919A84B28E8 /* /Users/yanggao/Documents/Git Hub/Partical-Drop/CMakeLists.txt */,
+			);
+			name = ZERO_CHECK;
+			sourceTree = "<group>";
+		};
+		CF528F896518414DB29079B6 /* ALL_BUILD */ = {
+			isa = PBXGroup;
+			children = (
+				13B775969400487B9704F3C8 /* CMake Rules */,
+				A9610D48E7124434A79FED7C /* /Users/yanggao/Documents/Git Hub/Partical-Drop/CMakeLists.txt */,
+			);
+			name = ALL_BUILD;
+			sourceTree = "<group>";
+		};
+		D5E0BA12674649BAABBA70BB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				88D3383AC01C4301A69E1B32 /* ParticleDrop */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EE7E7F6EE6B943319FCC11FD = {
+			isa = PBXGroup;
+			children = (
+				0D3240936ACE46698514CB6B /* ParticleDrop */,
+				CF528F896518414DB29079B6 /* ALL_BUILD */,
+				AFD25C0ABE77460495B4D3E0 /* ZERO_CHECK */,
+				D5E0BA12674649BAABBA70BB /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F72AD9C6CA204805867579C9 /* Header Files */ = {
+			isa = PBXGroup;
+			children = (
+				31F48FF75FC846ADBD90F82E /* /Users/yanggao/Documents/Git Hub/Partical-Drop/src/GLHelper.h */,
+				ED3BB93D9EDB4FB6B8EB2653 /* /Users/yanggao/Documents/Git Hub/Partical-Drop/src/GLLoader.h */,
+				48B657ECFBE54BAEAE6873FE /* /Users/yanggao/Documents/Git Hub/Partical-Drop/src/Model.h */,
+				1E1C1F0A16A444099C9D1E31 /* /Users/yanggao/Documents/Git Hub/Partical-Drop/src/RenderEngine.h */,
+				64807194E0FE4C10B355502B /* /Users/yanggao/Documents/Git Hub/Partical-Drop/src/ShaderManager.h */,
+				0CE09A422CA44E4AB6D31309 /* /Users/yanggao/Documents/Git Hub/Partical-Drop/src/WorldState.h */,
+				0B6096002C624E0EB38CACFC /* /Users/yanggao/Documents/Git Hub/Partical-Drop/src/gl3w/gl3w.h */,
+				941FF748A1CF485394054994 /* /Users/yanggao/Documents/Git Hub/Partical-Drop/src/gl3w/glcorearb.h */,
+				C79F195E4B4346F9A6844249 /* /Users/yanggao/Documents/Git Hub/Partical-Drop/src/objload/obj_parser.h */,
+				882D081B875C435E86921407 /* /Users/yanggao/Documents/Git Hub/Partical-Drop/src/simplePNG.h */,
+			);
+			name = "Header Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		DC0AA6BE35B84ED3B948C2E1 /* ParticleDrop */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F98DF1B015024417A54BB4BC /* Build configuration list for PBXNativeTarget "ParticleDrop" */;
+			buildPhases = (
+				83121FB5A46B42A5A64D04D0 /* Sources */,
+				8E4B580FC322482182961C6A /* CMake PostBuild Rules */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5A79F7FF6167466387D4EFCB /* PBXTargetDependency */,
+			);
+			name = ParticleDrop;
+			productName = ParticleDrop;
+			productReference = 88D3383AC01C4301A69E1B32 /* ParticleDrop */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		139E3213FB1B4161AA95FA3B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 0900;
+			};
+			buildConfigurationList = 394E917C41824144AD1CAB99 /* Build configuration list for PBXProject "ParticleDrop" */;
+			buildSettings = {
+			};
+			buildStyles = (
+				4960528526DB4D7AB7648BAD /* Debug */,
+				3E6F63189CD34CF29CC9675A /* Release */,
+				76DF7F2ACB994B249A34E518 /* MinSizeRel */,
+				A6AD871DE60A4CECB52B403B /* RelWithDebInfo */,
+			);
+			compatibilityVersion = "Xcode 3.2";
+			hasScannedForEncodings = 0;
+			mainGroup = EE7E7F6EE6B943319FCC11FD;
+			projectDirPath = .;
+			projectRoot = "";
+			targets = (
+				9882C6FDEC2D4BCE8E892685 /* ALL_BUILD */,
+				DC0AA6BE35B84ED3B948C2E1 /* ParticleDrop */,
+				3EE9ECBF71304AE99BB2FBD9 /* ZERO_CHECK */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0146CE29F7FF4D5C86C455AC /* CMake Rules */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			name = "CMake Rules";
+			outputPaths = (
+"/Users/yanggao/Documents/Git Hub/Partical-Drop/CMakeFiles/ZERO_CHECK"			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "make -C /Users/yanggao/Documents/Git\\ Hub/Partical-Drop -f /Users/yanggao/Documents/Git\\ Hub/Partical-Drop/CMakeScripts/ZERO_CHECK_cmakeRulesBuildPhase.make$CONFIGURATION all";
+			showEnvVarsInLog = 0;
+		};
+		6B0363A8455B42E29BA16E1A = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# shell script goes here
+exit 0";
+			showEnvVarsInLog = 0;
+		};
+		7CD406D125AE43A79A0A87BB /* CMake Rules */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			name = "CMake Rules";
+			outputPaths = (
+"/Users/yanggao/Documents/Git Hub/Partical-Drop/CMakeFiles/ALL_BUILD"			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "make -C /Users/yanggao/Documents/Git\\ Hub/Partical-Drop -f /Users/yanggao/Documents/Git\\ Hub/Partical-Drop/CMakeScripts/ALL_BUILD_cmakeRulesBuildPhase.make$CONFIGURATION all";
+			showEnvVarsInLog = 0;
+		};
+		8E4B580FC322482182961C6A /* CMake PostBuild Rules */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			name = "CMake PostBuild Rules";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "make -C /Users/yanggao/Documents/Git\\ Hub/Partical-Drop -f /Users/yanggao/Documents/Git\\ Hub/Partical-Drop/CMakeScripts/ParticleDrop_postBuildPhase.make$CONFIGURATION all";
+			showEnvVarsInLog = 0;
+		};
+		C4055A714704493881CBE13F = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# shell script goes here
+exit 0";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		83121FB5A46B42A5A64D04D0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CF59AF587F96455898FCE35C /* /Users/yanggao/Documents/Git Hub/Partical-Drop/src/gl3w/gl3w.c */,
+				B0D70BEDCBD446EB9FEC7593 /* /Users/yanggao/Documents/Git Hub/Partical-Drop/src/glm/detail/dummy.cpp */,
+				1BF132062EF2458BAA1C1C5A /* /Users/yanggao/Documents/Git Hub/Partical-Drop/src/glm/detail/glm.cpp */,
+				5D3A7508545E444ABC19440D /* /Users/yanggao/Documents/Git Hub/Partical-Drop/src/main.cpp */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		0679C09BA48C44868AD9BD2F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DC0AA6BE35B84ED3B948C2E1 /* ParticleDrop */;
+			targetProxy = 705E2475CDC0483BB17C9A79 /* PBXContainerItemProxy */;
+		};
+		52C0A4D5ACA944B29B08489D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3EE9ECBF71304AE99BB2FBD9 /* ZERO_CHECK */;
+			targetProxy = 565DE2138E674921925A1F1A /* PBXContainerItemProxy */;
+		};
+		5A79F7FF6167466387D4EFCB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3EE9ECBF71304AE99BB2FBD9 /* ZERO_CHECK */;
+			targetProxy = 64EAEFA96C6A42A991B85C9C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		0E1D076C354A459C8909A793 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk;
+				SYMROOT = "/Users/yanggao/Documents/Git Hub/Partical-Drop/build";
+			};
+			name = Debug;
+		};
+		2CA2421E290D468F9A5C74DF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = "/Users/yanggao/Documents/Git Hub/Partical-Drop/build/Release";
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				FRAMEWORK_SEARCH_PATHS = (/Library/Frameworks);
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 3;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","'EXEC_NAME=\"ParticleDrop\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				LD_RUNPATH_SEARCH_PATHS = /Library/Frameworks;
+				LIBRARY_SEARCH_PATHS = "";
+				OTHER_CFLAGS = "    -DNDEBUG  ";
+				OTHER_CPLUSPLUSFLAGS = "    -DNDEBUG  ";
+				OTHER_LDFLAGS = " -Wl,-search_paths_first -Wl,-headerpad_max_install_names  -framework OpenGL -framework sfml-network -framework sfml-audio -framework sfml-graphics -framework sfml-window -framework sfml-system -framework CoreFoundation";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ParticleDrop;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/yanggao/Documents/Git Hub/Partical-Drop";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = Release;
+		};
+		6972F51B424941DD9BF80350 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (/Library/Frameworks);
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/yanggao/Documents/Git Hub/Partical-Drop";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = Debug;
+		};
+		6C973F8D70854127A1EB1A9B /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (/Library/Frameworks);
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/yanggao/Documents/Git Hub/Partical-Drop";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = RelWithDebInfo;
+		};
+		7BE60E68C0F24E1CB77C4445 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (/Library/Frameworks);
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/yanggao/Documents/Git Hub/Partical-Drop";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = MinSizeRel;
+		};
+		96025834F092424F8A5047EF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (/Library/Frameworks);
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/yanggao/Documents/Git Hub/Partical-Drop";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = Debug;
+		};
+		A54F126D954E43F6A2BDFC03 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (/Library/Frameworks);
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/yanggao/Documents/Git Hub/Partical-Drop";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = Release;
+		};
+		A626611618AC4CCE89ABD075 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (/Library/Frameworks);
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/yanggao/Documents/Git Hub/Partical-Drop";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = Release;
+		};
+		A71F3BC7380244F38934C4D7 /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk;
+				SYMROOT = "/Users/yanggao/Documents/Git Hub/Partical-Drop/build";
+			};
+			name = RelWithDebInfo;
+		};
+		B8E477B5DA8540749E8DC224 /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (/Library/Frameworks);
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/yanggao/Documents/Git Hub/Partical-Drop";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = RelWithDebInfo;
+		};
+		BDE881D7B141472FAA5E4260 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk;
+				SYMROOT = "/Users/yanggao/Documents/Git Hub/Partical-Drop/build";
+			};
+			name = Release;
+		};
+		C72BBA7CE64A432F8F60DB86 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (/Library/Frameworks);
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/yanggao/Documents/Git Hub/Partical-Drop";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = MinSizeRel;
+		};
+		E44AF8F123E64721BC2A8C55 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = "/Users/yanggao/Documents/Git Hub/Partical-Drop/build/Debug";
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				FRAMEWORK_SEARCH_PATHS = (/Library/Frameworks);
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","'EXEC_NAME=\"ParticleDrop\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				LD_RUNPATH_SEARCH_PATHS = /Library/Frameworks;
+				LIBRARY_SEARCH_PATHS = "";
+				OTHER_CFLAGS = "    ";
+				OTHER_CPLUSPLUSFLAGS = "    ";
+				OTHER_LDFLAGS = " -Wl,-search_paths_first -Wl,-headerpad_max_install_names  -framework OpenGL -framework sfml-network -framework sfml-audio -framework sfml-graphics -framework sfml-window -framework sfml-system -framework CoreFoundation";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ParticleDrop;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/yanggao/Documents/Git Hub/Partical-Drop";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = Debug;
+		};
+		E4718C13014B44F2AABC80B4 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk;
+				SYMROOT = "/Users/yanggao/Documents/Git Hub/Partical-Drop/build";
+			};
+			name = MinSizeRel;
+		};
+		E8049CDC78BE44B098B1C725 /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = "/Users/yanggao/Documents/Git Hub/Partical-Drop/build/RelWithDebInfo";
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				FRAMEWORK_SEARCH_PATHS = (/Library/Frameworks);
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 2;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","'EXEC_NAME=\"ParticleDrop\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				LD_RUNPATH_SEARCH_PATHS = /Library/Frameworks;
+				LIBRARY_SEARCH_PATHS = "";
+				OTHER_CFLAGS = "       -DNDEBUG  ";
+				OTHER_CPLUSPLUSFLAGS = "       -DNDEBUG  ";
+				OTHER_LDFLAGS = " -Wl,-search_paths_first -Wl,-headerpad_max_install_names  -framework OpenGL -framework sfml-network -framework sfml-audio -framework sfml-graphics -framework sfml-window -framework sfml-system -framework CoreFoundation";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ParticleDrop;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/yanggao/Documents/Git Hub/Partical-Drop";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = RelWithDebInfo;
+		};
+		EBFB007DFDAA45B797FAFC9C /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = "/Users/yanggao/Documents/Git Hub/Partical-Drop/build/MinSizeRel";
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				FRAMEWORK_SEARCH_PATHS = (/Library/Frameworks);
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = s;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","'EXEC_NAME=\"ParticleDrop\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				LD_RUNPATH_SEARCH_PATHS = /Library/Frameworks;
+				LIBRARY_SEARCH_PATHS = "";
+				OTHER_CFLAGS = "    -DNDEBUG  ";
+				OTHER_CPLUSPLUSFLAGS = "    -DNDEBUG  ";
+				OTHER_LDFLAGS = " -Wl,-search_paths_first -Wl,-headerpad_max_install_names  -framework OpenGL -framework sfml-network -framework sfml-audio -framework sfml-graphics -framework sfml-window -framework sfml-system -framework CoreFoundation";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ParticleDrop;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/yanggao/Documents/Git Hub/Partical-Drop";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = MinSizeRel;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		21126088594C4A95BEF3F6DA /* Build configuration list for PBXAggregateTarget "ZERO_CHECK" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				96025834F092424F8A5047EF /* Debug */,
+				A626611618AC4CCE89ABD075 /* Release */,
+				C72BBA7CE64A432F8F60DB86 /* MinSizeRel */,
+				6C973F8D70854127A1EB1A9B /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		394E917C41824144AD1CAB99 /* Build configuration list for PBXProject "ParticleDrop" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0E1D076C354A459C8909A793 /* Debug */,
+				BDE881D7B141472FAA5E4260 /* Release */,
+				E4718C13014B44F2AABC80B4 /* MinSizeRel */,
+				A71F3BC7380244F38934C4D7 /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		DE538AC90D974DE3AB37EC0B /* Build configuration list for PBXAggregateTarget "ALL_BUILD" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6972F51B424941DD9BF80350 /* Debug */,
+				A54F126D954E43F6A2BDFC03 /* Release */,
+				7BE60E68C0F24E1CB77C4445 /* MinSizeRel */,
+				B8E477B5DA8540749E8DC224 /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		F98DF1B015024417A54BB4BC /* Build configuration list for PBXNativeTarget "ParticleDrop" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E44AF8F123E64721BC2A8C55 /* Debug */,
+				2CA2421E290D468F9A5C74DF /* Release */,
+				EBFB007DFDAA45B797FAFC9C /* MinSizeRel */,
+				E8049CDC78BE44B098B1C725 /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 139E3213FB1B4161AA95FA3B /* Project object */;
+}
