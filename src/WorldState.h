@@ -87,7 +87,7 @@ public:
 		//TODO2: load teapot.obj
 		// Translate its centroid to the origin, then to 2.22,0,2.22
         Model model2 = Model();
-        model2.init("resources/teapot.obj");
+        model2.init("resources/sphere.obj");
         model2.setupAttributeBuffers();
         models.push_back(model2);
         glm::vec3 center2 = model2.getCentroid();
