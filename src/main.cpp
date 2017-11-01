@@ -103,7 +103,9 @@ private:
 				state.setRunning(false);
 			if ((event.type == sf::Event::KeyPressed) && (event.key.code == sf::Keyboard::Escape))
 				state.setRunning(false);
-			
+            //todo Add shader mode
+            if ((event.type == sf::Event::TextEntered) && (event.text.unicode == 's'))
+                state.switchShadingMode();
 			if((event.type == sf::Event::TextEntered) && (event.text.unicode == 'r'))
 				state.toggleModelRotate();
 			if((event.type == sf::Event::TextEntered) && (event.text.unicode == 't'))

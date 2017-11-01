@@ -12,9 +12,10 @@ uniform mat3 N;   //inverse transpose of upperleft 3x3 of M
 uniform mat4 Lr;  //light rotation matrix
 uniform vec4 lightPos;    //light position
 uniform vec4 camPos;      //camera position
-
+uniform int curMode; //current shading mode
 uniform sampler2D texId;
 //uniform sampler2DRect texId;
+flat in vec4 flatColor;
 
 in vec4 smoothColor;
 in vec3 smoothPos;
@@ -22,6 +23,7 @@ in vec3 smoothNorm;
 in vec4 shadowPos;
 
 layout(location = 0) out vec4 fragColor;
+
 
 vec4 reflectance(in vec3 pos, in vec3 norm, in vec3 colorIn, in float visibilityFactor)
 {
@@ -51,6 +53,7 @@ vec4 reflectance(in vec3 pos, in vec3 norm, in vec3 colorIn, in float visibility
 	
 	return ka*Li + kd*d*Li + ks*s*Li;
 }
+
 
 float scaleToRange(float v, vec2 bounds) {
 	float range = bounds[1] - bounds[0];
@@ -103,7 +106,21 @@ float getVisibility()
 void main()
 {
 	float visibilityFactor = getVisibility();
-	
-	fragColor = reflectance(smoothPos, smoothNorm, smoothColor.xyz, visibilityFactor);
+    if (curMode == 0){
+        fragColor = reflectance(smoothPos, smoothNorm, smoothColor.xyz, visibilityFactor);
+    }
+    else if (curMode == 1){
+        float x = smoothNorm.x;
+        float y = smoothNorm.y;
+        float z = smoothNorm.z;
+        
+        x = (x+1)/2;
+        y = (y+1)/2;
+        z = (z+1)/2;
+        fragColor = vec4(x,y,z,0);
+    }
+    else {
+        fragColor = flatColor;
+    }
 }
 

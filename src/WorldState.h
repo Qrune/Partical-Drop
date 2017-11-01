@@ -9,7 +9,7 @@ class WorldState
 private:
 	float frameTimes[NUM_TRACKED_FRAMES];
 	bool running;
-	
+    int currentMode;
 	//TODO1: Change this to a vector of models
 	// Fix the fallout
 	vector<Model> models;
@@ -163,7 +163,15 @@ public:
 	
 	glm::mat4 getLightRotate() const
 	{ return lightRotate; }
-	
+    
+    void switchShadingMode(){
+        this->currentMode ++;
+        this->currentMode = this->currentMode % 3;
+        printf("current Mode is %d\n",this->currentMode);
+    }
+    int getShadingMode() const{
+        return this->currentMode;
+    }
 	glm::vec4 getLightPos() const
 	{ return this->lightPos; }
 	

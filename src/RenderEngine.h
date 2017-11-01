@@ -130,6 +130,7 @@ private:
 		glUniformMatrix4fv(glGetUniformLocation(shaderId, "Lv"), 1, GL_FALSE, &Lv[0][0]);
 		glUniform4fv(glGetUniformLocation(shaderId, "lightPos"), 1, &lightPos[0]);
 		glUniform4fv(glGetUniformLocation(shaderId, "camPos"), 1, &camPos[0]);
+        glUniform1i(glGetUniformLocation(shaderId,"curMode"),state.getShadingMode());
 
 //		glUniform1f(glGetUniformLocation(shaderId, "elapsedTime"), state.currentTime);
 //		glUniform1f(glGetUniformLocation(shaderId, "near"), _near);
