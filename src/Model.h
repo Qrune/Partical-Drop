@@ -191,8 +191,26 @@ public:
 		max = computeMaxBound();
 		center = computeCentroid();
 		dim = computeDimension();
+        
 	}
-	
+    //set different move index for different kinde of moves
+    void setMoveIndex(int n){
+        this->moveindex = n;
+    }
+    int getMoveIndex() const{
+        return this->moveindex;
+    }
+    //every time worldstate will call move for all models
+    void Move(){
+        if (this->moveindex == 0){
+            printf("move\n");
+            return;
+        }
+        else{
+            //move the model according to moveindex
+            this->transform = glm::translate(this->transform, glm::vec3(0.01,0.01,0.01));
+        }
+    }
 	vector<glm::vec3> const getPositions() const
 	{ return positions; }
 	
@@ -264,7 +282,7 @@ public:
 			glBindVertexArray(0);
 		}
 	}
-
+    
 	size_t getVertexCount() const
 	{ return positions.size()/3; }
 	
@@ -337,7 +355,7 @@ private:
 		
 		return bound;
 	}
-	
+
 	glm::vec3 computeCentroid()
 	{
 		glm::vec3 center = (computeMaxBound()-computeMinBound())/2.0f + computeMinBound();
@@ -398,6 +416,12 @@ private:
 	GLuint vertArray;
 	GLuint attrBuffer[3];
 	GLuint elementBuffer;
+    int moveindex = 0;
+    float xPos;
+    float yPos;
+    
+    float xVel;
+    float yVel;
 };
 
 #endif

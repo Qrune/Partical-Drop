@@ -44,23 +44,35 @@ public:
 	void display(WorldState & state)
 	{
 		size_t shaderId;
-
-		shaderId = 0;
-
-		glBindFramebuffer(GL_FRAMEBUFFER, 0);
-		glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
-		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-
-		glUseProgram(shaderProg[shaderId]);
-		uploadUniforms(shaderProg[shaderId], state,0);
+        shaderId = 0;
+        glDisable(GL_CULL_FACE);
+        glBindFramebuffer(GL_FRAMEBUFFER, 0);
+        glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
+        glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+        
+        glUseProgram(shaderProg[shaderId]);
+        uploadUniforms(shaderProg[shaderId], state,0);
+        state.getModel(0).draw(shaderProg[shaderId]);
+        
+        //how to cull front face?
+        glEnable(GL_CULL_FACE);
+        glCullFace(GL_BACK_LEFT);
+        
+        glEnable(GL_BLEND);
+        glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+        
+		
         uploadUniforms(shaderProg[shaderId], state, 1);
 		
 		//draw
-		state.getModel(0).draw(shaderProg[shaderId]);
+		
 		state.getModel(1).draw(shaderProg[shaderId]);
 
 		glUseProgram(0);
 		checkGLError("model");
+        if (state.moveEnabled()){
+            printf("enable");
+        }
 	}
 
 private:

@@ -26,6 +26,7 @@ out vec4 smoothColor;
 out vec4 shadowPos;
 flat out vec4 flatColor;
 
+
 vec4 reflectance(in vec3 pos, in vec3 norm, in vec3 colorIn, in float visibilityFactor)
 {
     float alpha = 10;

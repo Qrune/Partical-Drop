@@ -34,6 +34,7 @@ public:
 	
 	bool lightRotating;
 	bool modelRotating;
+    bool moveEnable;
 
 	float cursorScrollAmount;
 	float center[3];
@@ -87,15 +88,17 @@ public:
 		//TODO2: load teapot.obj
 		// Translate its centroid to the origin, then to 2.22,0,2.22
         Model model2 = Model();
-        model2.init("resources/sphere.obj");
+        model2.init("resources/teapot.obj");
         model2.setupAttributeBuffers();
         models.push_back(model2);
         glm::vec3 center2 = model2.getCentroid();
         glm::mat4 trans2 = glm::translate(glm::mat4(1), -glm::vec3(2.22, 2, 2.22));
+        trans2 = glm::scale(trans2, glm::vec3(0.5,0.5,0.5));
         glm::mat4 modelTransform2 = glm::translate(glm::mat4(1), -model2.getCentroid());
         modelTransform2 = trans2*modelTransform2;
         model2.setTransform(trans2);
         models.push_back(model2);
+        model2.setMoveIndex(1);
         
         
 		
@@ -153,13 +156,18 @@ public:
 		lightView = glm::lookAt(currentLightPos, cameraLook, cameraUp);
 		
 		this->currentTime = t;
+        //call move function for each model
+        for (int i=0; i<models.size(); i++){
+            models.at(i).Move();
+        }
+        
 	}
 	
 	Model & getModel(int index)
 	{ return models.at(index); }
 	
-	glm::mat4 getModelTransform() const
-	{ return modelTransform; }
+	glm::mat4 getModelTransform(int index) const
+	{ return models.at(index).getTransform(); }
 	
 	glm::mat4 getLightRotate() const
 	{ return lightRotate; }
@@ -199,6 +207,13 @@ public:
 		printf("%f\n", d);
 		cameraPos = cameraPos * d;
 	}
+    //start move?
+    void startMove(){
+        this->moveEnable = !this->moveEnable;
+    }
+    bool moveEnabled() const{
+        return this->moveEnable;
+    }
 };
 
 #endif
