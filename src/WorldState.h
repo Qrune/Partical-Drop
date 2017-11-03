@@ -86,9 +86,10 @@ public:
 		
 		modelIncrementRot = glm::rotate(glm::mat4(1), 0.02f, glm::vec3(0,1,0));
 		glm::mat4 trans = glm::translate(glm::mat4(1), -model.getCentroid());
-        trans = glm::scale(trans, glm::vec3(0.5,0.5,0.5));
-		modelTransform = glm::translate(trans, glm::vec3(0, 2.0, 0));
+        trans = glm::scale(trans, glm::vec3(0.3,0.3,0.3));
+		modelTransform = glm::translate(trans, glm::vec3(-2, 2.0, 0));
 		model.setTransform(modelTransform);
+        model.setMoveIndex(1);
         models.push_back(model);
 		
 		//TODO2: load teapot.obj
@@ -97,10 +98,10 @@ public:
         model2.init("resources/teapot.obj");
         model2.setupAttributeBuffers();
         
-        glm::mat4 trans2 = glm::translate(glm::mat4(1), -glm::vec3(2.22, 2, 2.22));
-        trans2 = glm::scale(trans2, glm::vec3(0.5,0.5,0.5));
+    
         glm::mat4 modelTransform2 = glm::translate(glm::mat4(1), -model2.getCentroid());
-        modelTransform2 = trans2*modelTransform2;
+        modelTransform2 = glm::translate(modelTransform2, glm::vec3(2.22,4,3.3));
+        modelTransform2 = glm::scale(modelTransform2, glm::vec3(0.5,0.5,0.5));
         model2.setTransform(modelTransform2);
         model2.setMoveIndex(1);
 		models.push_back(model2);
@@ -108,6 +109,20 @@ public:
 		
 		lightRotating = false;
 		modelRotating = false;
+        for (int i =0; i<5; i++)
+        {
+            Model model3 = Model();
+            model3.init("resources/sphere.obj");
+            model3.setupAttributeBuffers();
+        
+            glm::mat4 modelTransform3 = glm::translate(glm::mat4(1),-model3.getCentroid());
+            modelTransform3 = glm::scale(modelTransform3,glm::vec3(0.3,0.3,0.3));
+            //modelTransform3 = glm::translate(modelTransform3, glm::vec3(,0,-2));
+            model3.setTransform(modelTransform3);
+            model3.setMoveIndex(i+1);
+            models.push_back(model3);
+        }
+        
 	}
 	
 	void updateFrameTime(float timeAsSeconds)

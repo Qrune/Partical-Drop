@@ -53,13 +53,13 @@ public:
         uploadUniforms(shaderProg[shaderId], state,0);
         state.getModel(0).draw(shaderProg[shaderId]);
         
-		glEnable(GL_DEPTH_TEST);
-        //how to cull front face?
-        glEnable(GL_CULL_FACE);
-        glCullFace(GL_BACK);
-        
-        glEnable(GL_BLEND);
-        glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+//        glEnable(GL_DEPTH_TEST);
+//        //how to cull front face?
+//        glEnable(GL_CULL_FACE);
+//        glCullFace(GL_BACK);
+//
+//        glEnable(GL_BLEND);
+//        glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
         
 		
         uploadUniforms(shaderProg[shaderId], state, 1);
@@ -67,7 +67,13 @@ public:
 		//draw
 		
 		state.getModel(1).draw(shaderProg[shaderId]);
-
+        uploadUniforms(shaderProg[shaderId], state, 2);
+        state.getModel(2).draw(shaderProg[shaderId]);
+        
+        for (int i=3; i<7; i++){
+            uploadUniforms(shaderProg[shaderId], state,i);
+            state.getModel(i).draw(shaderProg[shaderId]);
+        }
 		glUseProgram(0);
 		checkGLError("model");
         if (state.moveEnabled()){

@@ -5,6 +5,7 @@
 #include <string.h>
 #include "glm/glm.hpp"
 #include "objload/objLoader.hpp"
+#include <stdlib.h>
 using namespace std; //makes using vectors easy
 
 #define OBJ_VEC_SIZE 3
@@ -206,9 +207,27 @@ public:
             printf("move\n");
             return;
         }
-        else{
+        else if (this->moveindex == 1){
+            float rotatePercent = 0.003;
+            float rotateangle = (-rotatePercent*2*M_PI);
+            glm::vec3 rotateMatrix = glm::vec3(0,1,0);
+
+            this->transform = glm::rotate(this->transform,  rotateangle,rotateMatrix);
+        }
+        else if (this->moveindex == 2){
             //move the model according to moveindex
-            this->transform = glm::translate(this->transform, glm::vec3(0.01,0.01,0.01));
+            this->transform = glm::translate(this->transform, glm::vec3(0,0.01,0));
+        }
+        else if (this->moveindex == 3){
+            //move the model according to moveindex
+            this->transform = glm::translate(this->transform, glm::vec3(0.01,0,0));
+        }
+        else if (this->moveindex == 4){
+            this->transform = glm::translate(this->transform, glm::vec3((double)(rand()%100)/1000,(double)(rand()%100)/1000,(double)(rand()%100)/1000));
+            printf("%f\n",(double)(rand()%100)/1000);
+        }
+        else{
+            this->transform = glm::translate(this->transform, glm::vec3(0,0,0.01));
         }
     }
 	vector<glm::vec3> const getPositions() const
