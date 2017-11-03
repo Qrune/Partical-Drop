@@ -193,7 +193,7 @@ public:
     
     void switchShadingMode(){
         this->currentMode ++;
-        this->currentMode = this->currentMode % 3;
+        this->currentMode = this->currentMode % 4;
         printf("current Mode is %d\n",this->currentMode);
     }
     int getShadingMode() const{

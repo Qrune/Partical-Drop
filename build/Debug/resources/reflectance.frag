@@ -112,7 +112,12 @@ void main()
     else if (curMode == 1){
         fragColor = smoothColor;
     }
-    else {
+    else if (curMode == 2)
+    {
+        vec3 edi = vec3((flatColor.x+flatColor.y+flatColor.z)/3);
+        fragColor = vec4(edi,flatColor.x);
+    }
+    else{
         fragColor = flatColor;
     }
 }
