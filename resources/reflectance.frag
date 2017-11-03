@@ -110,14 +110,7 @@ void main()
         fragColor = reflectance(smoothPos, smoothNorm, smoothColor.xyz, visibilityFactor);
     }
     else if (curMode == 1){
-        float x = smoothNorm.x;
-        float y = smoothNorm.y;
-        float z = smoothNorm.z;
-        
-        x = (x+1)/2;
-        y = (y+1)/2;
-        z = (z+1)/2;
-        fragColor = vec4(x,y,z,0);
+        fragColor = smoothColor;
     }
     else {
         fragColor = flatColor;

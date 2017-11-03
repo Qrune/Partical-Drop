@@ -31,6 +31,9 @@ public:
 	glm::mat4 modelTransform;
 	glm::mat4 cameraMatrix;
 	glm::mat4 lightView;
+    
+    glm::mat4 translatePart;
+    glm::mat4 totalModelTransform;
 	
 	bool lightRotating;
 	bool modelRotating;
@@ -83,6 +86,7 @@ public:
 		
 		modelIncrementRot = glm::rotate(glm::mat4(1), 0.02f, glm::vec3(0,1,0));
 		glm::mat4 trans = glm::translate(glm::mat4(1), -model.getCentroid());
+        trans = glm::scale(trans, glm::vec3(0.5,0.5,0.5));
 		modelTransform = glm::translate(trans, glm::vec3(0, 2.0, 0));
 		model.setTransform(modelTransform);
         models.push_back(model);
@@ -214,6 +218,17 @@ public:
     bool moveEnabled() const{
         return this->moveEnable;
     }
+
+	void updateXYTranslate(glm::ivec2 & oldPos, glm::ivec2 & newPos)
+	{
+		#define XY_SENSITIVITY 0.01f 
+		float dx = newPos.x - oldPos.x;
+		float dy = oldPos.y - newPos.y;
+		glm::mat4 trans = glm::translate(glm::mat4(1.0f), XY_SENSITIVITY*glm::vec3(dx, dy, 0));
+		glm::mat4 record = glm::translate(glm::mat4(1.0f), XY_SENSITIVITY*glm::vec3(-dx, -dy, 0));
+		translatePart = record*translatePart;
+		totalModelTransform = trans*totalModelTransform;
+	}
 };
 
 #endif

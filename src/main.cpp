@@ -54,6 +54,7 @@ public:
 		buttonDown[2]=false;
 		
 		sf::Clock c;
+
 		float lastFrame = c.restart().asSeconds();
 		float lastPrint = lastFrame;
 		float targetFrameTime = 1.0f/(float)TARGET_FPS;
@@ -90,11 +91,13 @@ private:
 	WorldState state;
 	
 	sf::Clock timer;
+	float lastUpdate;
 	glm::ivec2 previousPos;
 	bool buttonDown[3];
 
 	void handleEvents(WorldState & state, RenderEngine & render)
 	{
+		bool shiftDown = sf::Keyboard::isKeyPressed(sf::Keyboard::LShift) || sf::Keyboard::isKeyPressed(sf::Keyboard::RShift);
 		sf::Event event;
 		
 		while (window->pollEvent(event))
@@ -114,18 +117,6 @@ private:
 			if(event.type == sf::Event::Resized) {
 				resize(event.size.width, event.size.height);
 			}
-
-			if(event.type == sf::Event::MouseButtonPressed)
-			{
-				state.lastClickPos[0] = event.mouseButton.x;
-				state.lastClickPos[1] = (state.currentRes[1]-event.mouseButton.y);
-				state.lastFrameDragPos[0] = event.mouseButton.x;
-				state.lastFrameDragPos[1] = (state.currentRes[1]-event.mouseButton.y);
-				state.mouseButtonDown = true;
-			}
-
-			if(event.type == sf::Event::MouseButtonReleased)
-				state.mouseButtonDown = false;
 
 			if(event.type == sf::Event::MouseMoved && state.mouseButtonDown)
 			{
@@ -147,8 +138,54 @@ private:
 				state.cursorAbsolutePos[1] = (state.currentRes[1]-event.mouseMove.y);
 			}
 
+			if (event.type == sf::Event::MouseButtonPressed)
+			{
+				previousPos = glm::vec2(event.mouseButton.x, event.mouseButton.y);
+
+				if (event.mouseButton.button == sf::Mouse::Left && !shiftDown)
+					buttonDown[0] = 1;
+				if (event.mouseButton.button == sf::Mouse::Right)
+					buttonDown[1] = true;
+				if (event.mouseButton.button == sf::Mouse::Middle)
+					buttonDown[2] = true;
+				if (event.mouseButton.button == sf::Mouse::Left && shiftDown)
+					buttonDown[2] = true;
+			}
+
+			if (event.type == sf::Event::MouseButtonReleased)
+			{
+				if (event.mouseButton.button == sf::Mouse::Left && !shiftDown)
+					buttonDown[0] = false;
+				if (event.mouseButton.button == sf::Mouse::Right)
+					buttonDown[1] = false;
+				if (event.mouseButton.button == sf::Mouse::Middle)
+					buttonDown[2] = false;
+				if (event.mouseButton.button == sf::Mouse::Left && shiftDown)
+					buttonDown[2] = false;
+
+				lastUpdate = timer.getElapsedTime().asSeconds();
+			}
+		}
+
+
+		lastUpdate = timer.getElapsedTime().asSeconds();
+		bool needsUpdate = lastUpdate > TIME_BETWEEN_UPDATES;
+		if (needsUpdate)
+		{
+			glm::ivec2 newPos = glm::ivec2(sf::Mouse::getPosition(*window).x, sf::Mouse::getPosition(*window).y);
+
+			if (buttonDown[0])
+				//state.updateRotate(previousPos, newPos);
+			if (buttonDown[1])
+				state.updateXYTranslate(previousPos, newPos);
+			if (buttonDown[2])
+				//state.updateZTranslate(previousPos, newPos);
+
+			lastUpdate = timer.restart().asSeconds();
+			previousPos = newPos;
 		}
 	}
+	
 
 	void resize(size_t x, size_t y)
 	{
