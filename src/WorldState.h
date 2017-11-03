@@ -56,7 +56,7 @@ public:
 		
 		running = true;
 		Model model = Model();
-		model.init("resources/material_test.obj");
+		model.init("resources/cube.obj");
 		model.setupAttributeBuffers();
 		
 		glm::vec3 center = model.getCentroid();
@@ -82,7 +82,9 @@ public:
 		lightIncrement = glm::rotate(glm::mat4(1), -0.05f, glm::vec3(0,1,0));
 		
 		modelIncrementRot = glm::rotate(glm::mat4(1), 0.02f, glm::vec3(0,1,0));
-		modelTransform = glm::translate(glm::mat4(1), -model.getCentroid());
+		glm::mat4 trans = glm::translate(glm::mat4(1), -model.getCentroid());
+		modelTransform = glm::translate(trans, glm::vec3(0, 2.0, 0));
+		model.setTransform(modelTransform);
         models.push_back(model);
 		
 		//TODO2: load teapot.obj
@@ -90,16 +92,14 @@ public:
         Model model2 = Model();
         model2.init("resources/teapot.obj");
         model2.setupAttributeBuffers();
-        models.push_back(model2);
-        glm::vec3 center2 = model2.getCentroid();
+        
         glm::mat4 trans2 = glm::translate(glm::mat4(1), -glm::vec3(2.22, 2, 2.22));
         trans2 = glm::scale(trans2, glm::vec3(0.5,0.5,0.5));
         glm::mat4 modelTransform2 = glm::translate(glm::mat4(1), -model2.getCentroid());
         modelTransform2 = trans2*modelTransform2;
-        model2.setTransform(trans2);
-        models.push_back(model2);
+        model2.setTransform(modelTransform2);
         model2.setMoveIndex(1);
-        
+		models.push_back(model2);
         
 		
 		lightRotating = false;
