@@ -70,7 +70,7 @@ public:
         uploadUniforms(shaderProg[shaderId], state, 2);
         state.getModel(2).draw(shaderProg[shaderId]);
         
-        for (int i=3; i<7; i++){
+        for (int i=3; i<42; i++){
             uploadUniforms(shaderProg[shaderId], state,i);
             state.getModel(i).draw(shaderProg[shaderId]);
         }

@@ -213,21 +213,59 @@ public:
             glm::vec3 rotateMatrix = glm::vec3(0,1,0);
 
             this->transform = glm::rotate(this->transform,  rotateangle,rotateMatrix);
+            
         }
         else if (this->moveindex == 2){
             //move the model according to moveindex
-            this->transform = glm::translate(this->transform, glm::vec3(0,0.01,0));
+            if (switch1 == 0){
+            this->transform = glm::translate(this->transform, glm::vec3(0,0.08,0));
+                updateLocation(glm::vec3(0,0.08,0));
+                printf("current %f\n",getLocation().y);
+                if (getLocation().y > 10)
+                    switch1 = 1;
+            }
+            else{
+                this->transform = glm::translate(this->transform, glm::vec3(0,-0.08,0));
+                updateLocation(glm::vec3(0,-0.08,0));
+                if (getLocation().y < 0)
+                    switch1 = 0;
+            }
         }
         else if (this->moveindex == 3){
             //move the model according to moveindex
-            this->transform = glm::translate(this->transform, glm::vec3(0.01,0,0));
+            //move the model according to moveindex
+            if (switch1 == 0){
+                this->transform = glm::translate(this->transform, glm::vec3(0,0.1,0));
+                updateLocation(glm::vec3(0,0.1,0));
+                printf("current %f\n",getLocation().y);
+                if (getLocation().y > 10)
+                    switch1 = 1;
+            }
+            else{
+                this->transform = glm::translate(this->transform, glm::vec3(0,-0.1,0));
+                updateLocation(glm::vec3(0,-0.1,0));
+                if (getLocation().y < 0)
+                    switch1 = 0;
+            }
         }
         else if (this->moveindex == 4){
             this->transform = glm::translate(this->transform, glm::vec3((double)(rand()%100)/1000,(double)(rand()%100)/1000,(double)(rand()%100)/1000));
-            printf("%f\n",(double)(rand()%100)/1000);
+            //printf("%f\n",(double)(rand()%100)/1000);
         }
         else{
-            this->transform = glm::translate(this->transform, glm::vec3(0,0,0.01));
+            if (switch1 == 0){
+                this->transform = glm::translate(this->transform, glm::vec3(0,0.1+this->moveindex*0.05,0));
+                updateLocation(glm::vec3(0,(0.1+this->moveindex*0.05),0));
+                printf("current %f\n",getLocation().y);
+                if (getLocation().y > 20)
+                    switch1 = 1;
+            }
+            else{
+                this->transform = glm::translate(this->transform, glm::vec3(0,-(0.1+this->moveindex*0.05),0));
+                updateLocation(glm::vec3(0,-(0.1+this->moveindex*0.05),0));
+                if (getLocation().y < 0)
+                    switch1 = 0;
+            }
         }
     }
 	vector<glm::vec3> const getPositions() const
@@ -334,6 +372,15 @@ public:
 
 	void setTransform(glm::mat4 transform)
 	{ this->transform = transform; }
+    
+    //get current location
+    glm::vec3 getLocation() const
+    { return location; }
+    
+    //update location
+    void updateLocation(glm::vec3 trans){
+        this->location = trans + location;
+    }
 	
 private:
 	
@@ -431,11 +478,14 @@ private:
 	glm::vec3 dim;
 	glm::vec3 center;
 	glm::mat4 transform;
+    glm::vec3 location = glm::vec3(0);
 
 	GLuint vertArray;
 	GLuint attrBuffer[3];
 	GLuint elementBuffer;
+    
     int moveindex = 0;
+    int switch1 = 0;
     float xPos;
     float yPos;
     

@@ -109,17 +109,18 @@ public:
 		
 		lightRotating = false;
 		modelRotating = false;
-        for (int i =0; i<5; i++)
+        for (int i =0; i<40; i++)
         {
             Model model3 = Model();
             model3.init("resources/sphere.obj");
             model3.setupAttributeBuffers();
         
             glm::mat4 modelTransform3 = glm::translate(glm::mat4(1),-model3.getCentroid());
-            modelTransform3 = glm::scale(modelTransform3,glm::vec3(0.3,0.3,0.3));
-            //modelTransform3 = glm::translate(modelTransform3, glm::vec3(,0,-2));
+            modelTransform3 = glm::scale(modelTransform3,glm::vec3(0.08,0.08,0.08));
+            modelTransform3 = glm::translate(modelTransform3, glm::vec3(i*0.25,0,-2));
             model3.setTransform(modelTransform3);
-            model3.setMoveIndex(i+1);
+            model3.updateLocation(glm::vec3(0.2,0.2,0.2));
+            model3.setMoveIndex(i+4);
             models.push_back(model3);
         }
         
@@ -190,7 +191,7 @@ public:
 	
 	glm::mat4 getLightRotate() const
 	{ return lightRotate; }
-    
+    // press to switch shading mdoe
     void switchShadingMode(){
         this->currentMode ++;
         this->currentMode = this->currentMode % 4;
@@ -198,6 +199,11 @@ public:
     }
     int getShadingMode() const{
         return this->currentMode;
+    }
+    
+    void cameraMove(float n){
+        this->cameraPos +=n;
+        this->cameraLook +=n;
     }
 	glm::vec4 getLightPos() const
 	{ return this->lightPos; }

@@ -107,7 +107,7 @@ private:
 			if ((event.type == sf::Event::KeyPressed) && (event.key.code == sf::Keyboard::Escape))
 				state.setRunning(false);
             //todo Add shader mode
-            if ((event.type == sf::Event::TextEntered) && (event.text.unicode == 's'))
+            if ((event.type == sf::Event::TextEntered) && (event.text.unicode == ' '))
                 state.switchShadingMode();
 			if((event.type == sf::Event::TextEntered) && (event.text.unicode == 'r'))
 				state.toggleModelRotate();
@@ -117,7 +117,11 @@ private:
 			if(event.type == sf::Event::Resized) {
 				resize(event.size.width, event.size.height);
 			}
-
+            
+            if((event.type == sf::Event::KeyPressed) && (event.key.code == sf::Keyboard::Q))
+                state.cameraMove(-0.05);
+            if ((event.type== sf::Event::KeyPressed) && (event.key.code == sf::Keyboard::E))
+                state.cameraMove(0.05);
 			if(event.type == sf::Event::MouseMoved && state.mouseButtonDown)
 			{
 				state.cursorDragAmount[0] += state.lastFrameDragPos[0] - event.mouseMove.x;
