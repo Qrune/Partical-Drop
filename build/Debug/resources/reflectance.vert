@@ -19,12 +19,15 @@ uniform vec4 lightPos;
 
 layout(location = 0) in vec3 pos;
 layout(location = 1) in vec3 colorIn;
-
+in vec2 texCoord;
+in float timeIn;
 out vec3 smoothPos;
 out vec3 smoothNorm;
 out vec4 smoothColor;
 out vec4 shadowPos;
+out vec2 texMapping;
 flat out vec4 flatColor;
+out float timeOut;
 
 
 vec4 reflectance(in vec3 pos, in vec3 norm, in vec3 colorIn, in float visibilityFactor)
@@ -82,4 +85,6 @@ void main()
 	vec4 p = vec4(pos, 1);
 	gl_Position = P*M*p;
     flatColor = reflectance(smoothPos, smoothNorm, smoothColor.xyz, 1);
+    texMapping = texCoord;
+    timeOut = timeIn;
 }

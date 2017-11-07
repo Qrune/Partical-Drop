@@ -100,10 +100,10 @@ public:
         
     
         glm::mat4 modelTransform2 = glm::translate(glm::mat4(1), -model2.getCentroid());
-        modelTransform2 = glm::translate(modelTransform2, glm::vec3(2.22,4,3.3));
+        modelTransform2 = glm::translate(modelTransform2, glm::vec3(0,0,2));
         modelTransform2 = glm::scale(modelTransform2, glm::vec3(0.5,0.5,0.5));
         model2.setTransform(modelTransform2);
-        model2.setMoveIndex(1);
+        model2.setMoveIndex(2);
 		models.push_back(model2);
         
 		

@@ -14,8 +14,11 @@ uniform vec4 lightPos;    //light position
 uniform vec4 camPos;      //camera position
 uniform int curMode; //current shading mode
 uniform sampler2D texId;
+uniform sampler2D texSampler;
 //uniform sampler2DRect texId;
 flat in vec4 flatColor;
+in vec3 texMapping;
+in float timeOut;
 
 in vec4 smoothColor;
 in vec3 smoothPos;
@@ -116,6 +119,10 @@ void main()
     {
         vec3 edi = vec3((flatColor.x+flatColor.y+flatColor.z)/3);
         fragColor = vec4(edi,flatColor.x);
+    }
+    else if (curMode == 3){
+        vec2 position = vec2((smoothPos.x/512),(smoothPos.y/512));
+        fragColor = vec4(flatColor.x ,flatColor.y,flatColor.z,flatColor.w*cos(timeOut));
     }
     else{
         fragColor = flatColor;
