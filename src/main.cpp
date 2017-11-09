@@ -113,6 +113,8 @@ private:
 				state.toggleModelRotate();
 			if((event.type == sf::Event::TextEntered) && (event.text.unicode == 't'))
 				state.toggleLightRotate();
+            if((event.type == sf::Event::TextEntered) && (event.text.unicode == 'o'))
+                state.test();
 			
 			if(event.type == sf::Event::Resized) {
 				resize(event.size.width, event.size.height);

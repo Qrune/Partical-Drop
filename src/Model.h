@@ -219,7 +219,7 @@ public:
             if (switchy == 0){
                 this->transform = glm::translate(this->transform, glm::vec3(0,0.1+this->moveindex*0.04,0));
                 updateLocation(glm::vec3(0,(0.1+this->moveindex*0.04),0));
-                printf("current %f\n",getLocation().y);
+                //printf("current %f\n",getLocation().y);
                 if (getLocation().y > 40)
                     switchy = 1;
             }
@@ -232,7 +232,7 @@ public:
             if (switchx == 0){
                 this->transform = glm::translate(this->transform, glm::vec3(0.1+this->moveindex*0.04,0,0));
                 updateLocation(glm::vec3((0.1+this->moveindex*0.04),0,0));
-                printf("current %f\n",getLocation().y);
+                //printf("current %f\n",getLocation().y);
                 if (getLocation().x > 20)
                     switchx = 1;
             }
@@ -372,6 +372,18 @@ public:
     void updateLocation(glm::vec3 trans){
         this->location = trans + location;
     }
+    
+    int getColorChange() const
+    { return this->colorChange; }
+    
+    void setColorChange(int n)
+    { this->colorChange = n; }
+    
+    int getTag() const
+    { return this-> tag; }
+    
+    void setTag(int n)
+    { this->tag = n; }
 	
 private:
 	
@@ -479,6 +491,8 @@ private:
     int switch1 = 0;
     int switchx = 0;
     int switchy = 0;
+    int colorChange = 0;
+    int tag = 0;
     float xPos;
     float yPos;
     

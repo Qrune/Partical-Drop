@@ -13,19 +13,23 @@ uniform mat4 Lr;  //light rotation matrix
 uniform vec4 lightPos;    //light position
 uniform vec4 camPos;      //camera position
 uniform int curMode; //current shading mode
+uniform int colorChange;
 uniform sampler2D texId;
 uniform sampler2D texSampler;
 //uniform sampler2DRect texId;
 flat in vec4 flatColor;
-in vec3 texMapping;
+in vec2 texMapping;
 in float timeOut;
 
 in vec4 smoothColor;
 in vec3 smoothPos;
 in vec3 smoothNorm;
 in vec4 shadowPos;
+vec4 changeColor;
 
 layout(location = 0) out vec4 fragColor;
+vec3 colorA = vec3(0.149,0.141,0.912);
+vec3 colorB = vec3(1.000,0.833,0.224);
 
 
 vec4 reflectance(in vec3 pos, in vec3 norm, in vec3 colorIn, in float visibilityFactor)
@@ -119,13 +123,22 @@ void main()
     {
         vec3 edi = vec3((flatColor.x+flatColor.y+flatColor.z)/3);
         fragColor = vec4(edi,flatColor.x);
+        changeColor = vec4(0,0,0,0);
+        //fragColor = reflectance(smoothPos, smoothNorm, vec3(1,0.5,0.5), 1);
     }
     else if (curMode == 3){
-        vec2 position = vec2((smoothPos.x/512),(smoothPos.y/512));
-        fragColor = vec4(flatColor.x ,flatColor.y,flatColor.z,flatColor.w*cos(timeOut));
+        float pct = abs(sin(timeOut));
+        
+        // Mix uses pct (a value from 0-1) to
+        // mix the two colors
+        vec4 changeColor = smoothColor;
+        if (colorChange == 1)
+            changeColor.z = 0.5;
+        
+        fragColor = changeColor;//vec4(colorB,1);
     }
     else{
-        fragColor = flatColor;
+        fragColor = vec4(1,0,1,0);
     }
 }
 

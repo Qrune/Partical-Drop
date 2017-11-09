@@ -90,6 +90,8 @@ public:
 		modelTransform = glm::translate(trans, glm::vec3(-2, 2.0, 0));
 		model.setTransform(modelTransform);
         model.setMoveIndex(1);
+        //model.setColorChange(1);
+        model.setTag(1);
         models.push_back(model);
 		
 		//TODO2: load teapot.obj
@@ -225,13 +227,28 @@ public:
 	
 	void toggleLightRotate()
 	{ lightRotating = !lightRotating; }
+    
+    void changeColorWithTag(int tag){
+        for(int i = 0; i != models.size(); i++) {
+            if (models[i].getTag() == tag){
+                printf("color %d\n",models[i].getColorChange());
+                printf("found tag\n");
+                models[i].setColorChange(1);
+            }
+        }
+    }
 	
 	void zoomCamera(int delta)
 	{
 		float d = pow(0.95, delta);
-		printf("%f\n", d);
+		//printf("%f\n", d);
 		cameraPos = cameraPos * d;
 	}
+    void test()
+    {
+        printf("enter test\n");
+        changeColorWithTag(1);
+    }
     //start move?
     void startMove(){
         this->moveEnable = !this->moveEnable;
