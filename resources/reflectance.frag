@@ -133,7 +133,7 @@ void main()
         // mix the two colors
         vec4 changeColor = smoothColor;
         if (colorChange == 1)
-            changeColor.z = 0.5;
+            changeColor = vec4(colorA,1);
         
         fragColor = changeColor;//vec4(colorB,1);
     }

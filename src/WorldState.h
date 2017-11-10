@@ -87,7 +87,7 @@ public:
 		modelIncrementRot = glm::rotate(glm::mat4(1), 0.02f, glm::vec3(0,1,0));
 		glm::mat4 trans = glm::translate(glm::mat4(1), -model.getCentroid());
         trans = glm::scale(trans, glm::vec3(0.3,0.3,0.3));
-		modelTransform = glm::translate(trans, glm::vec3(-2, 2.0, 0));
+		modelTransform = glm::translate(trans, glm::vec3(-5.5, 1.0, 0));
 		model.setTransform(modelTransform);
         model.setMoveIndex(1);
         //model.setColorChange(1);
@@ -111,7 +111,7 @@ public:
 		
 		lightRotating = false;
 		modelRotating = false;
-        for (int i =0; i<40; i++)
+        for (int i =0; i<3; i++)
         {
             Model model3 = Model();
             model3.init("resources/sphere.obj");
@@ -119,10 +119,11 @@ public:
         
             glm::mat4 modelTransform3 = glm::translate(glm::mat4(1),-model3.getCentroid());
             modelTransform3 = glm::scale(modelTransform3,glm::vec3(0.08,0.08,0.08));
-            modelTransform3 = glm::translate(modelTransform3, glm::vec3(i*0.25,0,-2));
+            modelTransform3 = glm::translate(modelTransform3, glm::vec3(i*2,0,0));
+            model3.updateLocation(glm::vec3(i*2,0,0));
             model3.setTransform(modelTransform3);
             model3.updateLocation(glm::vec3(0.2,0.2,0.2));
-            model3.setMoveIndex(i+4);
+            model3.setMoveIndex(2+i);
             models.push_back(model3);
         }
         
@@ -180,7 +181,19 @@ public:
 		this->currentTime = t;
         //call move function for each model
         for (int i=0; i<models.size(); i++){
+            //printf("status %d \n",models.at(i).getStatus() );
             models.at(i).Move();
+            if (models.at(i).checkLocation() == 1){
+                printf("reached\n");
+                changeColorWithTag(1,1);
+                models.at(i).setStatus(1);
+            }
+            if (models.at(i).checkLocation() == 2){
+                printf("out\n");
+                models.at(i).setStatus(0);
+                changeColorWithTag(1,0);
+                
+            }
         }
         
 	}
@@ -228,12 +241,12 @@ public:
 	void toggleLightRotate()
 	{ lightRotating = !lightRotating; }
     
-    void changeColorWithTag(int tag){
+    void changeColorWithTag(int tag,int color){
         for(int i = 0; i != models.size(); i++) {
             if (models[i].getTag() == tag){
                 printf("color %d\n",models[i].getColorChange());
                 printf("found tag\n");
-                models[i].setColorChange(1);
+                models[i].setColorChange(color);
             }
         }
     }
@@ -247,7 +260,7 @@ public:
     void test()
     {
         printf("enter test\n");
-        changeColorWithTag(1);
+        changeColorWithTag(1,1);
     }
     //start move?
     void startMove(){

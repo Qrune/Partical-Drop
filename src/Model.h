@@ -215,31 +215,87 @@ public:
             this->transform = glm::rotate(this->transform,  rotateangle,rotateMatrix);
             
         }
-        else{
+        else if (this->moveindex == 2){
             if (switchy == 0){
-                this->transform = glm::translate(this->transform, glm::vec3(0,0.1+this->moveindex*0.04,0));
-                updateLocation(glm::vec3(0,(0.1+this->moveindex*0.04),0));
+                this->transform = glm::translate(this->transform, glm::vec3(0,0.1+this->moveindex*0.1,0));
+                updateLocation(glm::vec3(0,(0.1+this->moveindex*0.1),0));
                 //printf("current %f\n",getLocation().y);
                 if (getLocation().y > 40)
                     switchy = 1;
             }
             else{
-                this->transform = glm::translate(this->transform, glm::vec3(0,-(0.1+this->moveindex*0.04),0));
-                updateLocation(glm::vec3(0,-(0.1+this->moveindex*0.04),0));
+                this->transform = glm::translate(this->transform, glm::vec3(0,-(0.1+this->moveindex*0.1),0));
+                updateLocation(glm::vec3(0,-(0.1+this->moveindex*0.1),0));
                 if (getLocation().y < 0)
                     switchy = 0;
             }
             if (switchx == 0){
-                this->transform = glm::translate(this->transform, glm::vec3(0.1+this->moveindex*0.04,0,0));
-                updateLocation(glm::vec3((0.1+this->moveindex*0.04),0,0));
+                this->transform = glm::translate(this->transform, glm::vec3(0.1+this->moveindex*0.1,0,0));
+                updateLocation(glm::vec3((0.1+this->moveindex*0.1),0,0));
                 //printf("current %f\n",getLocation().y);
-                if (getLocation().x > 20)
+                if (getLocation().x > 25)
                     switchx = 1;
             }
             else{
-                this->transform = glm::translate(this->transform, glm::vec3(-(0.1+this->moveindex*0.04),0,0));
-                updateLocation(glm::vec3(-(0.1+this->moveindex*0.04),0,0));
-                if (getLocation().x < 0)
+                this->transform = glm::translate(this->transform, glm::vec3(-(0.1+this->moveindex*0.1),0,0));
+                updateLocation(glm::vec3(-(0.1+this->moveindex*0.1),0,0));
+                if (getLocation().x < -20)
+                    switchx = 0;
+            }
+        }
+        else if (this->moveindex == 3){
+            if (switchy == 0){
+                this->transform = glm::translate(this->transform, glm::vec3(0,(0.1+this->moveindex*0.1),0));
+                updateLocation(glm::vec3(0,(0.1+this->moveindex*0.1),0));
+                //printf("current %f\n",getLocation().y);
+                if (getLocation().y > 40)
+                    switchy = 1;
+            }
+            else{
+                this->transform = glm::translate(this->transform, glm::vec3(0,-(0.1+this->moveindex*0.1),0));
+                updateLocation(glm::vec3(0,-(0.1+this->moveindex*0.1),0));
+                if (getLocation().y < 0)
+                    switchy = 0;
+            }
+            if (switchx == 0){
+                this->transform = glm::translate(this->transform, glm::vec3(-(0.1+this->moveindex*0.1),0,0));
+                updateLocation(glm::vec3(-(0.1+this->moveindex*0.1),0,0));
+                //printf("current %f\n",getLocation().y);
+                if (getLocation().x <-20)
+                    switchx = 1;
+            }
+            else{
+                this->transform = glm::translate(this->transform, glm::vec3((0.1+this->moveindex*0.1),0,0));
+                updateLocation(glm::vec3((0.1+this->moveindex*0.1),0,0));
+                if (getLocation().x > 25)
+                    switchx = 0;
+            }
+        }
+        else{
+            if (switchy == 0){
+                this->transform = glm::translate(this->transform, glm::vec3(0,(0.1+this->moveindex*0.15),0));
+                updateLocation(glm::vec3(0,(0.1+this->moveindex*0.15),0));
+                //printf("current %f\n",getLocation().y);
+                if (getLocation().y > 40)
+                    switchy = 1;
+            }
+            else{
+                this->transform = glm::translate(this->transform, glm::vec3(0,-(0.1+this->moveindex*0.15),0));
+                updateLocation(glm::vec3(0,-(0.1+this->moveindex*0.15),0));
+                if (getLocation().y < 0)
+                    switchy = 0;
+            }
+            if (switchx == 0){
+                this->transform = glm::translate(this->transform, glm::vec3(-(0.1+this->moveindex*0.08),0,0));
+                updateLocation(glm::vec3(-(0.1+this->moveindex*0.08),0,0));
+                //printf("current %f\n",getLocation().y);
+                if (getLocation().x <-20)
+                    switchx = 1;
+            }
+            else{
+                this->transform = glm::translate(this->transform, glm::vec3((0.1+this->moveindex*0.08),0,0));
+                updateLocation(glm::vec3((0.1+this->moveindex*0.08),0,0));
+                if (getLocation().x > 25)
                     switchx = 0;
             }
         }
@@ -261,6 +317,29 @@ public:
     }
 	vector<glm::vec3> const getPositions() const
 	{ return positions; }
+
+    int checkLocation() const
+    {
+        if (status == 0){
+            if (getLocation().x <-17.5 && getLocation().y <4){
+                return 1;
+            }
+            return 0;
+        }
+        else {
+            if (getLocation().x >-17.5 && getLocation().y >4){
+                return 2;
+            }
+            return 0;
+        }
+    }
+    
+    int getStatus() const{
+        return this->status;
+    }
+    void setStatus(int n){
+        this->status = n;
+    }
 	
 	vector<glm::vec3> const getNormals() const
 	{ return normals; }
@@ -486,6 +565,7 @@ private:
 	GLuint vertArray;
 	GLuint attrBuffer[3];
 	GLuint elementBuffer;
+    int status = 0;
     
     int moveindex = 0;
     int switch1 = 0;
